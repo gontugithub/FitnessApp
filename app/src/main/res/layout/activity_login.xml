@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/glTopBtIniciarSesion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181D29"
+    android:foregroundTintMode="add"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/TVname2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Password"
+        android:textColor="#525a73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/passwordInputInicioSesion"
+        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLTopInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.29" />
+
+    <TextView
+        android:id="@+id/textInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="INICIO SESION"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#BFFFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toStartOf="@+id/GLRightInicioSesion"
+        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLLeftInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLRightInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.69" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nameInputInicioSesion"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="316dp"
+        android:layout_height="58dp"
+        android:background="#202733"
+        android:inputType="text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintTop_toTopOf="@+id/GLTopInputNameInicioSesion" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/passwordInputInicioSesion"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="316dp"
+        android:layout_height="58dp"
+        android:background="#202733"
+        android:inputType="text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintTop_toTopOf="@+id/GLtoppasswordInput" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLTopInputNameInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.39" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLtoppasswordInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <TextView
+        android:id="@+id/TVname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Email"
+        android:textColor="#525A73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameInputInicioSesion"
+        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion" />
+
+    <Button
+        android:id="@+id/btIniciarSesion"
+        android:layout_width="164dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#7DC4F7"
+        android:fontFamily="@font/open_sans_condensed_bold"
+        android:text="INICIAR SESION"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:cornerRadius="30px"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6128591" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

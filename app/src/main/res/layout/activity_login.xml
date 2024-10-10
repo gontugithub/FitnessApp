@@ -19,7 +19,7 @@
         android:textColor="#525a73"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/passwordInputInicioSesion"
-        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion" />
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GLTopInicioSesion"
@@ -38,11 +38,11 @@
         android:textColorHighlight="#BFFFFFFF"
         android:textSize="34sp"
         app:layout_constraintEnd_toStartOf="@+id/GLRightInicioSesion"
-        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
         app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/GLLeftInicioSesion"
+        android:id="@+id/v_left_gl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -65,8 +65,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
         app:layout_constraintTop_toTopOf="@+id/GLTopInputNameInicioSesion" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -75,13 +75,13 @@
         android:layout_width="327dp"
         android:layout_height="54dp"
         android:background="#202733"
-        android:inputType="text"
+        android:inputType="text|textPassword"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#FFFFFF"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
-        app:layout_constraintTop_toTopOf="@+id/GLtoppasswordInput" />
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/h_center_gl" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GLTopInputNameInicioSesion"
@@ -91,14 +91,14 @@
         app:layout_constraintGuide_percent="0.39" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline7"
+        android:id="@+id/v_right_gl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/GLtoppasswordInput"
+        android:id="@+id/h_center_gl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -114,7 +114,7 @@
         android:textColor="#525A73"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/nameInputInicioSesion"
-        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion" />
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <Button
         android:id="@+id/btIniciarSesion"
@@ -127,8 +127,8 @@
         android:textColor="#000000"
         android:textSize="16sp"
         app:cornerRadius="30px"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintStart_toStartOf="@+id/GLLeftInicioSesion"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -164,7 +164,7 @@
         app:layout_constraintStart_toStartOf="@+id/GLleftLinkRegistrar" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
+        android:id="@+id/v_center_gl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"

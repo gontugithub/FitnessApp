@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181D29"
+    tools:context=".RegisterActivity">
+
+
+    <TextView
+        android:id="@+id/TVname8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Email"
+        android:textColor="#525A73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/GLTopInputNameInicioSesion"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
+
+    <TextView
+        android:id="@+id/TVname7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Repita Contraseña"
+        android:textColor="#525A73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
+
+    <TextView
+        android:id="@+id/TVname6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Contraseña"
+        android:textColor="#525A73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nameInputInicioSesion2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="328dp"
+        android:layout_height="54dp"
+        android:background="#202733"
+        android:inputType="text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLTopInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <TextView
+        android:id="@+id/textInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="REGISTRARSE"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#BFFFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_left_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nameInputInicioSesion"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="328dp"
+        android:layout_height="54dp"
+        android:background="#202733"
+        android:inputType="text|textPassword"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nameInputInicioSesion4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="328dp"
+        android:layout_height="54dp"
+        android:background="#202733"
+        android:inputType="text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/GLTopInputNameInicioSesion" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/nameInputInicioSesion3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="328dp"
+        android:layout_height="54dp"
+        android:background="#202733"
+        android:inputType="text|textPassword"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <TextView
+        android:id="@+id/TVname4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Nombre"
+        android:textColor="#525A73"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLTopInputNameInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_right_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/h_center_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/btIniciarSesion"
+        android:layout_width="328dp"
+        android:layout_height="55dp"
+        android:backgroundTint="#7DC4F7"
+        android:fontFamily="@font/open_sans_condensed_bold"
+        android:onClick="changePruebaActivity"
+        android:text="NUEVA CUENTA"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:cornerRadius="30px"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/guideline12" />
+
+    <TextView
+        android:id="@+id/LinkRegistrarseInicioSesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="YA TENGO UNA CUENTA"
+        android:textColor="#3D58EF"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toBottomOf="@+id/btIniciarSesion" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GLtopLinkRegistrarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/v_center_gl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#7DC4F7"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/GLtopLinkRegistrarse"
+        app:srcCompat="@drawable/gym_img" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

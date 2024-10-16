@@ -14,6 +14,7 @@
         android:ems="10"
         android:hint="Name"
         android:inputType="text"
+        style="@style/BordesRedonditos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -95,4 +96,14 @@
         app:layout_constraintBottom_toTopOf="@+id/nameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/BordesRedonditos"
+        android:layout_width="161dp"
+        android:layout_height="32dp"
+        android:background="@drawable/bordesredondos"
+        android:text="GONZALO"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="68dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

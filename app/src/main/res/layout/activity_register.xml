@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/TVname8"
+        android:id="@+id/r_txv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <TextView
-        android:id="@+id/TVname7"
+        android:id="@+id/r_txv_repeatPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <TextView
-        android:id="@+id/TVname6"
+        android:id="@+id/r_txv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -46,7 +46,7 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion2"
+        android:id="@+id/r_inpt_nombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -67,7 +67,7 @@
         app:layout_constraintGuide_percent="0.12" />
 
     <TextView
-        android:id="@+id/textInicioSesion"
+        android:id="@+id/r_txv_registarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
@@ -86,7 +86,7 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion"
+        android:id="@+id/r_inpt_repeatPassoword"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -100,7 +100,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion4"
+        android:id="@+id/r_inpt_email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toTopOf="@+id/GLTopInputNameInicioSesion" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion3"
+        android:id="@+id/r_input_password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -128,7 +128,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
-        android:id="@+id/TVname4"
+        android:id="@+id/r_txv_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -161,7 +161,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/btIniciarSesion"
+        android:id="@+id/r_btn_nuevaCuenta"
         android:layout_width="328dp"
         android:layout_height="55dp"
         android:backgroundTint="#7DC4F7"
@@ -176,7 +176,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline12" />
 
     <TextView
-        android:id="@+id/LinkRegistrarseInicioSesion"
+        android:id="@+id/r_btn_iniciarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
@@ -185,7 +185,7 @@
         android:textColor="#3D58EF"
         app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
         app:layout_constraintStart_toStartOf="@+id/v_left_gl"
-        app:layout_constraintTop_toBottomOf="@+id/btIniciarSesion" />
+        app:layout_constraintTop_toBottomOf="@+id/r_btn_nuevaCuenta" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GLtopLinkRegistrarse"

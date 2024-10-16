@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/TVname8"
+        android:id="@+id/ne_txv_peso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -22,7 +22,7 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <TextView
-        android:id="@+id/TVname6"
+        android:id="@+id/ne_txv_repeticiones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -34,7 +34,7 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion2"
+        android:id="@+id/ne_inpt_nombre"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -55,7 +55,7 @@
         app:layout_constraintGuide_percent="0.12" />
 
     <TextView
-        android:id="@+id/textInicioSesion"
+        android:id="@+id/ne_txv_nuevoEjericio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
@@ -74,7 +74,7 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion4"
+        android:id="@+id/ne_inpt_peso"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toTopOf="@+id/GLTopInputNameInicioSesion" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/nameInputInicioSesion3"
+        android:id="@+id/ne_inpt_repeticiones"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -104,7 +104,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline8" />
 
     <TextView
-        android:id="@+id/TVname4"
+        android:id="@+id/ne_txv_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
@@ -137,7 +137,7 @@
         app:layout_constraintGuide_percent="0.5" />
 
     <Button
-        android:id="@+id/btIniciarSesion"
+        android:id="@+id/ne_btn_crear"
         android:layout_width="328dp"
         android:layout_height="55dp"
         android:backgroundTint="#7DC4F7"
@@ -194,7 +194,7 @@
         app:layout_constraintGuide_percent="0.06" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ne_btn_cerrar"
         android:layout_width="20dp"
         android:layout_height="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"

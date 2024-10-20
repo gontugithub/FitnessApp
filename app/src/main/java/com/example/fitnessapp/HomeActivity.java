@@ -10,13 +10,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AllExercises extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_all_exercises);
+        setContentView(R.layout.activity_home);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -26,14 +26,10 @@ public class AllExercises extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void changeHomeActivity(View view){
-        startActivity(new Intent(AllExercises.this, HomeActivity.class ));
+    public void changeAllexerciseActivty(View view){
+        startActivity(new Intent(HomeActivity.this, AllExercises.class ));
 
     }
 
-    public void changeNewExercise(View view){
-        startActivity(new Intent(AllExercises.this, NewExerciseActivity.class ));
-
-    }
 
 }

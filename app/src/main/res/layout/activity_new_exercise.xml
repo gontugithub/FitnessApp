@@ -197,6 +197,7 @@
         android:id="@+id/ne_btn_cerrar"
         android:layout_width="20dp"
         android:layout_height="20dp"
+        android:onClick="changeAllExercise"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/v_right_gl"

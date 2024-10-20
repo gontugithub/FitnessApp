@@ -22,18 +22,6 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <TextView
-        android:id="@+id/r_txv_repeatPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/roboto_bold"
-        android:text="Repita Contraseña"
-        android:textColor="#525A73"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline9"
-        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
-
-    <TextView
         android:id="@+id/r_txv_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.17" />
 
     <TextView
         android:id="@+id/r_txv_registarse"
@@ -84,20 +72,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/r_inpt_repeatPassoword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="328dp"
-        android:layout_height="54dp"
-        android:background="#202733"
-        android:inputType="text|textPassword"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#FFFFFF"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
-        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
-        app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/r_inpt_email"
@@ -144,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.38" />
+        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v_right_gl"
@@ -166,7 +140,7 @@
         android:layout_height="55dp"
         android:backgroundTint="#7DC4F7"
         android:fontFamily="@font/open_sans_condensed_bold"
-        android:onClick="changePruebaActivity"
+        android:onClick="createNewUser"
         android:text="NUEVA CUENTA"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -181,6 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="9dp"
         android:fontFamily="@font/roboto_bold"
+        android:onClick="changeLoginActivity"
         android:text="YA TENGO UNA CUENTA"
         android:textColor="#3D58EF"
         app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
@@ -206,14 +181,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
+        app:layout_constraintGuide_percent="0.56" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -227,17 +202,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        app:backgroundTint="#7DC4F7"
-        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
-        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
-        app:layout_constraintTop_toTopOf="@+id/GLtopLinkRegistrarse"
-        app:srcCompat="@drawable/gym_img" />
+        app:layout_constraintGuide_percent="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

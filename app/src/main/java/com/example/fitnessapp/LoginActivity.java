@@ -31,7 +31,22 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void changePruebaActivity(View view){
-        startActivity(new Intent(LoginActivity.this, NewExerciseActivity.class ));
+        startActivity(new Intent(LoginActivity.this, AllExercises.class ));
 
     }
+
+    public void changeHomeActivity(View view){
+        startActivity(new Intent(LoginActivity.this, HomeActivity.class ));
+
+    }
+
+    public void changeRegisterActivty(View view){
+        startActivity(new Intent(LoginActivity.this, RegisterActivity.class ));
+
+    }
+
+
+    public int
+
+
 }

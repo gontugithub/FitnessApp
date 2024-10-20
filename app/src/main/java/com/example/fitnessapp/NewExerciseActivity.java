@@ -1,6 +1,8 @@
 package com.example.fitnessapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,5 +24,10 @@ public class NewExerciseActivity extends AppCompatActivity {
         });
 
         getSupportActionBar().hide();
+    }
+
+    public void changeAllExercise(View view){
+        startActivity(new Intent(NewExerciseActivity.this, AllExercises.class ));
+
     }
 }

@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class LoginActivity extends AppCompatActivity {
+    public static String username; // STATIC SOLO TIENE UNA VARIABLE EN TODO
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void login(){
+        // TODO SALE BIEN username = nombre de la textview
+    }
+
     public void changePruebaActivity(View view){
         startActivity(new Intent(LoginActivity.this, AllExercises.class ));
 
@@ -46,7 +51,102 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

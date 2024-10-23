@@ -12,6 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AllExercises extends AppCompatActivity {
 
+    public static String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,7 @@ public class AllExercises extends AppCompatActivity {
         });
 
         getSupportActionBar().hide();
+
     }
 
     public void changeHomeActivity(View view){

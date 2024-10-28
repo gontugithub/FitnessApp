@@ -31,12 +31,15 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void login(){
-        // TODO SALE BIEN username = nombre de la textview
+    public void login(View view){
+        Firebase firebase = new Firebase();
+
+        firebase.getAllUsersCollection("users");
+
     }
 
     public void changePruebaActivity(View view){
-        startActivity(new Intent(LoginActivity.this, AllExercises.class ));
+        startActivity(new Intent(LoginActivity.this, PruebaActivity.class ));
 
     }
 

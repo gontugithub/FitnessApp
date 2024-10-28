@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -14,12 +16,18 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fitnessapp.models.User;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.Firebase;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,8 +52,42 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    public void checkIfNameEmailExist(View view, String name, String email){
+        boolean flag = false;
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        database.collection("users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                ArrayList<User> users = new ArrayList<>();
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    Map<String, Object> documentObj = document.getData();
+                    users.add(new User(
+                            documentObj.get("name").toString(),
+                            documentObj.get("email").toString(),
+                            documentObj.get("password").toString()));
+                }
+
+                for (User user : users){
+
+                    if (user.getName().equals(name) || user.getEmail().equals(email)){
+
+                    }
+
+
+                }
+
+            }
+
+
+        });
+
+        return flag;
+
+    }
 
     public void createNewUser(View view){
+
+
 
         FirebaseFirestore database = FirebaseFirestore.getInstance();
 

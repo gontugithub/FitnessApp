@@ -31,12 +31,6 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void login(View view){
-        Firebase firebase = new Firebase();
-
-        firebase.getAllUsersCollection("users");
-
-    }
 
     public void changePruebaActivity(View view){
         startActivity(new Intent(LoginActivity.this, PruebaActivity.class ));

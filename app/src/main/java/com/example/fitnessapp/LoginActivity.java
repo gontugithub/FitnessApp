@@ -1,6 +1,9 @@
 package com.example.fitnessapp;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,9 +43,7 @@ public class LoginActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-
-
-
+        checkLocalDatabase();
     }
 
 
@@ -65,25 +66,27 @@ public class LoginActivity extends AppCompatActivity {
         return etText.getText().toString().trim().length() == 0;
     }
 
-    public void checkEmptyInputsLogin(View view){
+    private boolean checkLocalDatabase() {
+        DataBaseAux dataBaseAux = new DataBaseAux(this);
+        SQLiteDatabase db = dataBaseAux.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM users", null);
+        if(cursor.moveToFirst()){
+            String email = cursor.getString(1);
+            String pass = cursor.getString(2);
+            checkUserPassword(email, pass);
+            return true;
+        }
 
+        return false;
+    }
 
-
-        TextInputEditText email = findViewById(R.id.l_inpt_email);
-        TextInputEditText password = findViewById(R.id.l_inpt_password);
-
-
-        if (isEmpty(email) || isEmpty(password)){
-            Toast.makeText(LoginActivity.this, "CAMPOS VACIOS", Toast.LENGTH_SHORT).show();
-        } else {
-
-
+    private void checkUserPassword( String email, String pass) {
         FirebaseFirestore database = FirebaseFirestore.getInstance();
-
         database.collection("users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 boolean flag = false;
+                User correctUser = null;
                 ArrayList<User> users = new ArrayList<>();
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Map<String, Object> documentObj = document.getData();
@@ -93,30 +96,36 @@ public class LoginActivity extends AppCompatActivity {
                             documentObj.get("password").toString()));
                 }
 
-                for (User user : users){
-
-                    if (user.getPassword().equals(password.getText().toString()) && user.getEmail().equals(email.getText().toString())){
+                for (User user : users) {
+                    if (user.getPassword().equals(pass) && user.getEmail().equals(email)) {
                         flag = true;
+                        correctUser = user;
                         break;
                     }
                 }
+
                 if (flag){
-
-                    login(view,email.getText().toString(),password.getText().toString());
-
+                    createLocalRegistry(correctUser);
+                    login(null,email,pass);
                 } else {
 
                     Toast.makeText(LoginActivity.this, "EMAIL O CONTRSEÑA NO REGISTRADO", Toast.LENGTH_LONG).show();
                 }
-
             }
-
-
         });
+    }
+
+    public void checkEmptyInputsLogin(View view){
+        TextInputEditText email = findViewById(R.id.l_inpt_email);
+        TextInputEditText password = findViewById(R.id.l_inpt_password);
 
 
+        if (isEmpty(email) || isEmpty(password)){
+            Toast.makeText(LoginActivity.this, "CAMPOS VACIOS", Toast.LENGTH_SHORT).show();
+        } else {
 
 
+       checkUserPassword(email.getText().toString(), password.getText().toString());
     }}
 
     public void login(View view, String email, String password){
@@ -126,103 +135,15 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private void createLocalRegistry(User user) {
+        if(user == null)
+            return;
+
+        DataBaseAux dbaux = new DataBaseAux(this);
+        SQLiteDatabase db = dbaux.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("email", user.getEmail());
+        values.put("password", user.getPassword());
+        db.insert("users", null, values);
+    }
 }

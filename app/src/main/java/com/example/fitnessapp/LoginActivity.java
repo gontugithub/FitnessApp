@@ -105,8 +105,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 if (flag){
-                    createLocalRegistry(correctUser);
-                    login(null,email,pass);
+                     RegisterUser registerUser = RegisterUser.getInstance();
+                     registerUser.setUser(correctUser);
+                     createLocalRegistry(correctUser);
+                     login(null,email,pass);
                 } else {
 
                     Toast.makeText(LoginActivity.this, "EMAIL O CONTRSEÑA NO REGISTRADO", Toast.LENGTH_LONG).show();

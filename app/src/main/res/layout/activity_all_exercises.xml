@@ -23,6 +23,18 @@
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:srcCompat="@drawable/mas" />
 
+    <TextView
+        android:id="@+id/l_txv_iniciarSesion"
+        android:layout_width="327dp"
+        android:layout_height="39dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="TUS EJERCICIOS"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#BFFFFFFF"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/GLTopInicioSesion"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
@@ -69,40 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.87" />
-
-    <ScrollView
-        android:layout_width="329dp"
-        android:layout_height="737dp"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/l_txv_iniciarSesion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="TUS EJERCICIOS"
-                android:textColor="#FFFFFF"
-                android:textColorHighlight="#BFFFFFFF"
-                android:textSize="34sp"
-                app:layout_constraintEnd_toStartOf="@+id/GLRightInicioSesion"
-                app:layout_constraintStart_toStartOf="@+id/v_left_gl"
-                app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion" />
-
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintGuide_percent="0.86" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
@@ -110,5 +89,30 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="mostrarEjercicios"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/GLtopLinkRegistrarse"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="328dp"
+        android:layout_height="642dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintStart_toStartOf="@+id/v_left_gl"
+        app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion">
+
+        <GridView
+            android:id="@+id/tabla"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

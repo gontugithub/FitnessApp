@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.11" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v_left_gl"
@@ -101,8 +101,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout"
-        android:layout_width="328dp"
-        android:layout_height="642dp"
+        android:layout_width="327dp"
+        android:layout_height="608dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
         app:layout_constraintStart_toStartOf="@+id/v_left_gl"
@@ -112,7 +112,10 @@
             android:id="@+id/tabla"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:columnWidth="200dp"
+            android:gravity="center"
             android:numColumns="2" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

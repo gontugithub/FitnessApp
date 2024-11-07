@@ -57,14 +57,6 @@ public class AllExercises extends AppCompatActivity {
 
     }
 
-    public void rellenarGridEjercicios(ArrayList<Exercise> exercises){
-
-
-
-
-
-    }
-
 
 
     public void mostrarEjercicios(View view){

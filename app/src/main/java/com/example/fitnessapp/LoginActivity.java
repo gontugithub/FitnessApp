@@ -62,6 +62,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void changeEditActivyty(View view){
+        startActivity(new Intent(LoginActivity.this, EditExercise.class ));
+    }
+
     private boolean isEmpty(EditText etText) {
         return etText.getText().toString().trim().length() == 0;
     }

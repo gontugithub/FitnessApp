@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.fitnessapp.models.Exercise;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Adapter extends BaseAdapter {
@@ -52,10 +53,13 @@ public class Adapter extends BaseAdapter {
 
         TextView txtName = v.findViewById(R.id.txt_name);
 
-        txtName.setText(name);
+        txtName.setText(name.toUpperCase());
+
 
         return v;
-
-
     }
+
+
+
+
 }

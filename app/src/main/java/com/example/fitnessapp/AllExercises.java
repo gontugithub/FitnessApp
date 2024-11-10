@@ -3,8 +3,11 @@ package com.example.fitnessapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +47,7 @@ public class AllExercises extends AppCompatActivity {
             return insets;
         });
         getSupportActionBar().hide();
+        mostrarEjercicios();
 
     }
 
@@ -59,7 +63,9 @@ public class AllExercises extends AppCompatActivity {
 
 
 
-    public void mostrarEjercicios(View view){
+
+
+    public void mostrarEjercicios(){
 
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         RegisterUser registerUser = RegisterUser.getInstance();
@@ -89,13 +95,26 @@ public class AllExercises extends AppCompatActivity {
                 }
 
 
-               for (int i= 0; i<10;i++){
-                   exercises.add(new Exercise("remo", 8L, 21));
-               }
-
                GridView tabla = findViewById(R.id.tabla);
                Adapter adapter = new Adapter(AllExercises.this,R.layout.element, exercises);
                tabla.setAdapter(adapter);
+
+               tabla.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                   @Override
+                   public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                      Intent intent = new Intent(AllExercises.this, EditExercise.class);
+
+                      Exercise exercise = exercises.get(i);
+
+                     intent.putExtra("name",exercise.getName());
+                     intent.putExtra("repetition",exercise.getRepetition());
+                     intent.putExtra("weight",exercise.getWeight());
+                     startActivity(intent);
+
+
+                   }
+               });
 
 
                 }
@@ -104,5 +123,8 @@ public class AllExercises extends AppCompatActivity {
 
 
     }
+
+
+
 
 }

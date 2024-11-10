@@ -1,6 +1,11 @@
 package com.example.fitnessapp.models;
 
-public class Exercise {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Exercise{
 
     private String name;
     private Long repetition;
@@ -35,4 +40,5 @@ public class Exercise {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
 }

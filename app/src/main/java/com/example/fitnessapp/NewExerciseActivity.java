@@ -14,6 +14,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.fitnessapp.models.Exercise;
+import com.example.fitnessapp.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -22,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class NewExerciseActivity extends AppCompatActivity {
@@ -51,7 +54,8 @@ public class NewExerciseActivity extends AppCompatActivity {
 
     public void checkIfExist(View view){
 
-        String userId = "a";
+       RegisterUser registerUser = RegisterUser.getInstance();
+       String userId = registerUser.getUser().getName();
 
         TextInputEditText exercisename = findViewById(R.id.ne_inpt_nombre);
         TextInputEditText weight = findViewById(R.id.ne_inpt_peso);
@@ -66,18 +70,64 @@ public class NewExerciseActivity extends AppCompatActivity {
             FirebaseFirestore database = FirebaseFirestore.getInstance();
             Source src = Source.SERVER;
 
+
+
             database.collection("users").document(userId)
                     .get(src).addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                             DocumentSnapshot result = task.getResult();
                             Map<String, Object> data =  result.getData();
-                            ArrayList exercises = (ArrayList) data.get("exercises");
 
-                            for (Object exercise : exercises){
+                            ArrayList<HashMap> exerciseArray = (ArrayList<HashMap>) data.get("exercises");
+
+                            if(exerciseArray.isEmpty()){
+
+                                Toast.makeText(NewExerciseActivity.this, "NUEVO EJERCICO", Toast.LENGTH_SHORT).show();
+                                /*addNewExercise(userId,exercisename.getText().toString()
+                                        ,Double.parseDouble(weight.getText().toString())
+                                        ,Integer.parseInt(reps.getText().toString()));*/
+                            } else {
+
+                                Toast.makeText(NewExerciseActivity.this, "SIZE" + exerciseArray.size(), Toast.LENGTH_SHORT).show();
+                                boolean flag = true;
+
+
+                                for (HashMap<Object,Object> exe : exerciseArray){
+
+                                    String name = (String) exe.get("name");
+
+                                    if(name.toUpperCase().equals(exercisename.getText().toString().toUpperCase())){
+
+                                        flag = false;
+                                        break;
+
+                                    }
+                                }
+
+                                if(flag){
+
+                                    Toast.makeText(NewExerciseActivity.this, "NUEVO EJERCICO", Toast.LENGTH_SHORT).show();
+
+                                    HashMap<Object, Object> nuevoejercicio = new HashMap<>();
+                                    nuevoejercicio.put("name", exercisename.getText().toString());
+                                    nuevoejercicio.put("repetition", Integer.parseInt(reps.getText().toString()));
+                                    nuevoejercicio.put("weight" ,Double.parseDouble(weight.getText().toString()));
+
+                                    exerciseArray.add(nuevoejercicio);
+
+                                    addNewExercise(exerciseArray, database, userId);
+
+
+                                } else {
+                                    Toast.makeText(NewExerciseActivity.this, "EJERCICIO YA EXISTE", Toast.LENGTH_SHORT).show();
+                                }
+
 
 
                             }
+
+
 
 
                         }
@@ -95,7 +145,27 @@ public class NewExerciseActivity extends AppCompatActivity {
 
     }
 
-    public void addNewExercise(View view, String userid, String exercisename, Double weight, int reps){
+    public void addNewExercise(ArrayList<HashMap> allexercises, FirebaseFirestore database, String userId){
+
+        Map<String, Object> update = new HashMap<>();
+        update.put("exercises", allexercises);
+
+        database.collection("users").document(userId)
+                .update(update).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(NewExerciseActivity.this, "NUEVO EJERCICIO CREADO", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+
+
+
+
+
+
+
 
 
 

@@ -110,6 +110,7 @@ public class RegisterActivity extends AppCompatActivity {
         userdata.put("name", name);
         userdata.put("email", email);
         userdata.put("password", password);
+        userdata.put("exercises", new ArrayList<>());
 
         database.collection("users").document(name)
                 .set(userdata)

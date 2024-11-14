@@ -3,6 +3,7 @@ package com.example.fitnessapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,10 +25,21 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         getSupportActionBar().hide();
+        setName();
     }
 
     public void changeAllexerciseActivty(View view){
         startActivity(new Intent(HomeActivity.this, AllExercises.class ));
+
+    }
+
+    public void setName(){
+        String name = getIntent().getStringExtra("name");
+
+        TextView tx_name = findViewById(R.id.home_user_name);
+
+        tx_name.setText(name);
+
 
     }
 

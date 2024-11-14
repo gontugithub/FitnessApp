@@ -117,8 +117,14 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
-                        changeHomeActivity(view);
-                        Toast.makeText(RegisterActivity.this, "USUARIO " + name.toUpperCase(Locale.ROOT) + "CREADO", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class );
+
+                        intent.putExtra("email",email);
+                        intent.putExtra("password", password);
+
+                        startActivity(intent);
+
+                        Toast.makeText(RegisterActivity.this, "USUARIO " + name.toUpperCase(Locale.ROOT) + " CREADO", Toast.LENGTH_LONG).show();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

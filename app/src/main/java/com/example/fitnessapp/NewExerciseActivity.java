@@ -83,10 +83,15 @@ public class NewExerciseActivity extends AppCompatActivity {
 
                             if(exerciseArray.isEmpty()){
 
-                                Toast.makeText(NewExerciseActivity.this, "NUEVO EJERCICO", Toast.LENGTH_SHORT).show();
-                                /*addNewExercise(userId,exercisename.getText().toString()
-                                        ,Double.parseDouble(weight.getText().toString())
-                                        ,Integer.parseInt(reps.getText().toString()));*/
+                                HashMap<Object, Object> nuevoejercicio = new HashMap<>();
+                                nuevoejercicio.put("name", exercisename.getText().toString());
+                                nuevoejercicio.put("repetition", Integer.parseInt(reps.getText().toString()));
+                                nuevoejercicio.put("weight" ,Double.parseDouble(weight.getText().toString()));
+
+                                exerciseArray.add(nuevoejercicio);
+
+                                addNewExercise(exerciseArray, database, userId);
+
                             } else {
 
                                 Toast.makeText(NewExerciseActivity.this, "SIZE" + exerciseArray.size(), Toast.LENGTH_SHORT).show();

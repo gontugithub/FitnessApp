@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         getSupportActionBar().hide();
-
+        fillinputsIfRegister();
         checkLocalDatabase();
     }
 
@@ -112,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                      RegisterUser registerUser = RegisterUser.getInstance();
                      registerUser.setUser(correctUser);
                      createLocalRegistry(correctUser);
-                     login(null,email,pass);
+                     login(registerUser.getUser().getName());
                 } else {
 
                     Toast.makeText(LoginActivity.this, "EMAIL O CONTRSEÑA NO REGISTRADO", Toast.LENGTH_LONG).show();
@@ -134,10 +135,13 @@ public class LoginActivity extends AppCompatActivity {
        checkUserPassword(email.getText().toString(), password.getText().toString());
     }}
 
-    public void login(View view, String email, String password){
+    public void login(String username){
 
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class );
+
+        intent.putExtra("name",username);
         // ACCEDE A LA BASE DE DATOS LOCAL CON LOS PARAMETROS QUE ME PASEN Y DA ACCESO A LA HOME
-        changeHomeActivity(view);
+        startActivity(intent);
 
     }
 
@@ -151,5 +155,28 @@ public class LoginActivity extends AppCompatActivity {
         values.put("email", user.getEmail());
         values.put("password", user.getPassword());
         db.insert("users", null, values);
+    }
+
+
+    private void fillinputsIfRegister(){
+
+        if(getIntent().hasExtra("email")){
+
+            TextInputEditText inp_email = findViewById(R.id.l_inpt_email);
+            TextInputEditText password = findViewById(R.id.l_inpt_password);
+
+            String email = getIntent().getStringExtra("email");
+            String pass = getIntent().getStringExtra("password");
+
+            inp_email.setText(email);
+            password.setText(pass);
+
+        }
+
+
+
+
+
+
     }
 }

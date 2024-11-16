@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -64,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void changeEditActivyty(View view){
-        startActivity(new Intent(LoginActivity.this, EditExercise.class ));
+        startActivity(new Intent(LoginActivity.this, ExtendExercise.class ));
     }
 
     private boolean isEmpty(EditText etText) {
@@ -86,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void checkUserPassword( String email, String pass) {
+        Toast.makeText(this, "aaaa", Toast.LENGTH_SHORT).show();
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection("users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -137,11 +137,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(String username){
 
-        Intent intent = new Intent(LoginActivity.this, HomeActivity.class );
+        changeHomeActivity(null);
 
-        intent.putExtra("name",username);
-        // ACCEDE A LA BASE DE DATOS LOCAL CON LOS PARAMETROS QUE ME PASEN Y DA ACCESO A LA HOME
-        startActivity(intent);
 
     }
 

@@ -1,38 +1,39 @@
 package com.example.fitnessapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.fitnessapp.models.Exercise;
-
-public class EditExercise extends AppCompatActivity {
+public class ExtendExercise extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        // EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_edit_exercise);
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+        setContentView(R.layout.activity_extend_exercise);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        getSupportActionBar().hide();
+
+
+
         fillActivity();
     }
 
 
 
     public void changeAllExercises(View view){
-        startActivity(new Intent(EditExercise.this, AllExercises.class ));
+        startActivity(new Intent(ExtendExercise.this, AllExercises.class ));
 
     }
 

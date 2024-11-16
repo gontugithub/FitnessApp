@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void setName(){
-        String name = getIntent().getStringExtra("name");
+        String name = RegisterUser.getInstance().getUser().getName();
 
         TextView tx_name = findViewById(R.id.home_user_name);
 

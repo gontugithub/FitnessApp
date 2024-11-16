@@ -5,11 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -19,13 +14,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.fitnessapp.models.Exercise;
-import com.example.fitnessapp.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.Source;
 
 import java.util.ArrayList;
@@ -103,7 +96,7 @@ public class AllExercises extends AppCompatActivity {
                    @Override
                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                      Intent intent = new Intent(AllExercises.this, EditExercise.class);
+                      Intent intent = new Intent(AllExercises.this, ExtendExercise.class);
 
                       Exercise exercise = exercises.get(i);
 

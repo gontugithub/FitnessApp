@@ -31,14 +31,14 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="124dp"
-            android:layout_height="123dp"
-            android:scaleType="fitXY"
+            android:layout_width="110dp"
+            android:layout_height="109dp"
+            android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/sentadilla" />
+            app:srcCompat="@drawable/peso_con_borde" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline

@@ -54,6 +54,32 @@ public class ExtendExercise extends AppCompatActivity {
     }
 
 
+    public void changeEditExercise(View view){
+
+        TextView name, weight, reps;
+
+        name = findViewById(R.id.name);
+        weight = findViewById(R.id.weigth);
+        reps = findViewById(R.id.reps);
+
+        String sweight = (String) weight.getText();
+        String sreps = (String) reps.getText();
+
+
+        sweight = sweight.replace("kg","");
+        sreps = sreps.replace("x","");
+
+        Intent intent = new Intent(ExtendExercise.this, EditExerciseActivity.class);
+
+        intent.putExtra("name",name.getText());
+        intent.putExtra("weight",sweight);
+        intent.putExtra("repetition",sreps);
+
+        startActivity(intent);
+
+    }
+
+
 
 
 

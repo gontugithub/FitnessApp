@@ -5,15 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#181D29"
-    tools:context=".NewExerciseActivity">
-
+    android:background="@drawable/fondo_home_activity"
+    tools:context=".EditExerciseActivity">
 
     <TextView
         android:id="@+id/ne_txv_peso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Peso"
         android:textColor="#FFFFFF"
@@ -25,7 +23,6 @@
         android:id="@+id/ne_txv_repeticiones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Repeticiones"
         android:textColor="#FFFFFF"
@@ -34,7 +31,7 @@
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ne_inpt_nombre"
+        android:id="@+id/e_inpt_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -59,9 +56,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="NUEVO EJERCICIO"
+        android:text="EDITAR EJERCICIO"
         android:textColor="#FFFFFF"
-        android:textColorHighlight="#BFFFFFFF"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="@+id/v_left_gl"
         app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion" />
@@ -74,7 +70,7 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ne_inpt_peso"
+        android:id="@+id/e_inpt_weigth"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -89,7 +85,7 @@
         app:layout_constraintTop_toTopOf="@+id/GLTopInputNameInicioSesion" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/ne_inpt_repeticiones"
+        android:id="@+id/e_inpt_reps"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="328dp"
         android:layout_height="54dp"
@@ -107,7 +103,6 @@
         android:id="@+id/ne_txv_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Nombre"
         android:textColor="#FFFFFF"
@@ -130,13 +125,12 @@
         app:layout_constraintGuide_percent="0.9" />
 
     <Button
-        android:id="@+id/ne_btn_crear"
+        android:id="@+id/e_btn_edit"
         android:layout_width="328dp"
         android:layout_height="55dp"
         android:backgroundTint="#7DC4F7"
         android:fontFamily="@font/open_sans_condensed_bold"
-        android:onClick="checkIfExist"
-        android:text="CREAR "
+        android:text="EDITAR"
         android:textColor="#000000"
         android:textSize="16sp"
         app:cornerRadius="30px"
@@ -188,13 +182,11 @@
 
     <ImageView
         android:id="@+id/ne_btn_cerrar"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:onClick="changeAllExercise"
-        app:layout_constraintBottom_toTopOf="@+id/guideline12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/v_right_gl"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="27sp"
+        android:layout_height="30sp"
+        android:onClick="changeExtendActivity"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintTop_toTopOf="@+id/guideline12"
         app:srcCompat="@drawable/image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

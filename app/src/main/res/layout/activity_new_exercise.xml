@@ -188,13 +188,11 @@
 
     <ImageView
         android:id="@+id/ne_btn_cerrar"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="27dp"
+        android:layout_height="30dp"
         android:onClick="changeAllExercise"
-        app:layout_constraintBottom_toTopOf="@+id/guideline12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/v_right_gl"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
+        app:layout_constraintTop_toTopOf="@+id/guideline12"
         app:srcCompat="@drawable/image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

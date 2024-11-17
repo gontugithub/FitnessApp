@@ -94,7 +94,6 @@ public class NewExerciseActivity extends AppCompatActivity {
 
                             } else {
 
-                                Toast.makeText(NewExerciseActivity.this, "SIZE" + exerciseArray.size(), Toast.LENGTH_SHORT).show();
                                 boolean flag = true;
 
 
@@ -111,8 +110,6 @@ public class NewExerciseActivity extends AppCompatActivity {
                                 }
 
                                 if(flag){
-
-                                    Toast.makeText(NewExerciseActivity.this, "NUEVO EJERCICO", Toast.LENGTH_SHORT).show();
 
                                     HashMap<Object, Object> nuevoejercicio = new HashMap<>();
                                     nuevoejercicio.put("name", exercisename.getText().toString());
@@ -160,6 +157,7 @@ public class NewExerciseActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(NewExerciseActivity.this, "NUEVO EJERCICIO CREADO", Toast.LENGTH_SHORT).show();
+                        changeAllExercise(null);
                     }
                 });
 

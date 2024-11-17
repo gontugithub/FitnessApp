@@ -73,11 +73,6 @@ public class EditExerciseActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
 
     public void changeExtendActivity(View view){
@@ -98,6 +93,10 @@ public class EditExerciseActivity extends AppCompatActivity {
         name.setText(getIntent().getStringExtra("name").toLowerCase());
         weigth.setText(getIntent().getStringExtra("weight"));
         reps.setText(getIntent().getStringExtra("repetition"));
+
+    }
+
+    public void editExercise(){
 
     }
 

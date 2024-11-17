@@ -43,14 +43,10 @@ public class LoginActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
         fillinputsIfRegister();
-        checkLocalDatabase();
+        // checkLocalDatabase();
     }
 
 
-    public void changePruebaActivity(View view){
-        startActivity(new Intent(LoginActivity.this, PruebaActivity.class ));
-
-    }
 
     public void changeHomeActivity(View view){
         startActivity(new Intent(LoginActivity.this, HomeActivity.class ));
@@ -62,15 +58,12 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void changeEditActivyty(View view){
-        startActivity(new Intent(LoginActivity.this, ExtendExercise.class ));
-    }
 
     private boolean isEmpty(EditText etText) {
-        return etText.getText().toString().trim().length() == 0;
+        return etText.getText().toString().trim().isEmpty();
     }
 
-    private boolean checkLocalDatabase() {
+    /*private boolean checkLocalDatabase() {
         DataBaseAux dataBaseAux = new DataBaseAux(this);
         SQLiteDatabase db = dataBaseAux.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM users", null);
@@ -82,10 +75,9 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return false;
-    }
+    }*/
 
     private void checkUserPassword( String email, String pass) {
-        Toast.makeText(this, "aaaa", Toast.LENGTH_SHORT).show();
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection("users").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -112,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (flag){
                      RegisterUser registerUser = RegisterUser.getInstance();
                      registerUser.setUser(correctUser);
-                     createLocalRegistry(correctUser);
+                     // createLocalRegistry(correctUser);
                      login(registerUser.getUser().getName());
                 } else {
 
@@ -136,13 +128,13 @@ public class LoginActivity extends AppCompatActivity {
     }}
 
     public void login(String username){
-
+        Toast.makeText(this, "BIENVENIDO DE NUEVO " + username.toUpperCase(), Toast.LENGTH_LONG).show();
         changeHomeActivity(null);
 
 
     }
 
-    private void createLocalRegistry(User user) {
+    /*private void createLocalRegistry(User user) {
         if(user == null)
             return;
 
@@ -152,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
         values.put("email", user.getEmail());
         values.put("password", user.getPassword());
         db.insert("users", null, values);
-    }
+    }*/
 
 
     private void fillinputsIfRegister(){

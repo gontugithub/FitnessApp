@@ -33,6 +33,13 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    public void changeUserProfile(View view){
+        startActivity(new Intent(HomeActivity.this, UserProfile.class ));
+
+    }
+
+
+
     public void setName(){
         String name = RegisterUser.getInstance().getUser().getName();
 

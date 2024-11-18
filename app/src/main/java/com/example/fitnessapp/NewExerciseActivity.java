@@ -161,17 +161,6 @@ public class NewExerciseActivity extends AppCompatActivity {
                     }
                 });
 
-
-
-
-
-
-
-
-
-
-
-
     }
 
 

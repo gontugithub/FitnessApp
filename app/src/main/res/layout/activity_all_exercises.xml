@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#181D29"
+    android:background="@drawable/fondo_home"
     android:textAlignment="center"
     tools:context=".AllExercises">
 
@@ -17,10 +17,9 @@
         android:clickable="true"
         android:onClick="changeNewExercise"
         app:backgroundTint="#7DC4F7"
-        app:layout_constraintBottom_toTopOf="@+id/GLtopLinkRegistrarse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline9"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline36"
+        app:layout_constraintStart_toStartOf="@+id/guideline35"
         app:srcCompat="@drawable/mas" />
 
     <TextView
@@ -44,8 +43,8 @@
         android:onClick="changeHomeActivity"
         app:backgroundTint="#7DC4F7"
         app:layout_constraintBottom_toTopOf="@+id/GLtopLinkRegistrarse"
-        app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
-        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintEnd_toStartOf="@+id/guideline36"
+        app:layout_constraintStart_toStartOf="@+id/guideline35"
         app:layout_constraintTop_toTopOf="@+id/guideline9"
         app:srcCompat="@drawable/casa" />
 
@@ -93,8 +92,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout"
-        android:layout_width="330dp"
-        android:layout_height="623dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/v_right_gl"
         app:layout_constraintStart_toStartOf="@+id/v_left_gl"
         app:layout_constraintTop_toTopOf="@+id/GLTopInicioSesion">
@@ -110,5 +110,19 @@
             tools:layout_editor_absoluteY="16dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8150852" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95620435" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

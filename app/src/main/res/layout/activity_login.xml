@@ -16,7 +16,7 @@
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Password"
-        android:textColor="#525a73"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/l_inpt_password"
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.23" />
 
     <TextView
         android:id="@+id/l_txv_iniciarSesion"
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.39" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v_right_gl"
@@ -102,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.52" />
+        app:layout_constraintGuide_percent="0.48" />
 
     <TextView
         android:id="@+id/l_txv_email"
@@ -111,7 +111,7 @@
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Email"
-        android:textColor="#525A73"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/l_inpt_email"
         app:layout_constraintStart_toStartOf="@+id/v_left_gl" />
@@ -136,14 +136,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
+        app:layout_constraintGuide_percent="0.61" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GLtopLinkRegistrarse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.72" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/GLleftLinkRegistrar"

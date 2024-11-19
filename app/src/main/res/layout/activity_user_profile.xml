@@ -101,6 +101,7 @@
         android:id="@+id/imageView8"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="changeHomeActivity"
         android:padding="6sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline20"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
@@ -174,6 +175,7 @@
         android:id="@+id/imageView9"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:onClick="developing"
         android:padding="6sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline30"
         app:layout_constraintEnd_toStartOf="@+id/guideline26"
@@ -194,5 +196,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80437756" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,7 +74,7 @@ public class EditExerciseActivity extends AppCompatActivity {
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(EditExerciseActivity.this, "CANCEL", Toast.LENGTH_SHORT).show();
+                Toast.makeText(EditExerciseActivity.this, "CANCELANDO ...", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
@@ -141,7 +141,7 @@ public class EditExerciseActivity extends AppCompatActivity {
 
     public void editExercise(){
 
-        String actual_name, actual_weigth, actual_reps;
+        String actual_name;
         TextInputEditText name, weigth, reps;
         RegisterUser registerUser = RegisterUser.getInstance();
         String userId = registerUser.getUser().getName();
@@ -183,8 +183,6 @@ public class EditExerciseActivity extends AppCompatActivity {
 
                                 if(name_string.toUpperCase().equals(name.getText().toString().toUpperCase())){
 
-                                    // ESTO ES QUE EXISTE YA UN EJERCICIO QUE SE LLAMA ASI
-
                                     flag = false;
                                     break;
 
@@ -192,7 +190,7 @@ public class EditExerciseActivity extends AppCompatActivity {
 
                             }
 
-                            if(flag){
+                            if(flag || actual_name.toLowerCase().equals(name.getText().toString().toLowerCase())){
 
                                 for(HashMap<Object,Object> exercise : exerciseArray){
 

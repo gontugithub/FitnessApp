@@ -63,7 +63,6 @@ public class UserProfile extends AppCompatActivity {
         btncancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(UserProfile.this, "CANCEL", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });
@@ -85,6 +84,14 @@ public class UserProfile extends AppCompatActivity {
         startActivity(new Intent(UserProfile.this, LoginActivity.class));
     }
 
+    public void changeHomeActivity(View view){
+
+        startActivity(new Intent(UserProfile.this, HomeActivity.class));
+
+    }
+
+
+
     public void fillData(){
 
         TextView name,email, password;
@@ -101,5 +108,11 @@ public class UserProfile extends AppCompatActivity {
 
 
     }
+
+    public void developing(View view){
+        Toast.makeText(this, "EN DESAROLLO", Toast.LENGTH_SHORT).show();
+        
+    }
+        
 
 }

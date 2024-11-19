@@ -140,7 +140,7 @@
         android:layout_height="55dp"
         android:backgroundTint="#7DC4F7"
         android:fontFamily="@font/open_sans_condensed_bold"
-        android:onClick="checkIfNameEmailExist"
+        android:onClick="checkEmptyInputsRegister"
         android:text="NUEVA CUENTA"
         android:textColor="#000000"
         android:textSize="16sp"

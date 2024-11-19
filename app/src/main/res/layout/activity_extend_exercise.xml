@@ -11,13 +11,12 @@
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:layout_marginTop="6sp"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/gym_burbujas" />
 
     <TextView
         android:id="@+id/name"

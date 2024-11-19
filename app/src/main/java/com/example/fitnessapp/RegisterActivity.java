@@ -3,6 +3,7 @@ package com.example.fitnessapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -55,11 +56,30 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void checkIfNameEmailExist(View view){
+    private boolean isEmpty(EditText etText) {
+        return etText.getText().toString().trim().isEmpty();
+    }
+
+    public void checkEmptyInputsRegister(View view){
+        TextInputEditText name = findViewById(R.id.r_inpt_nombre);
+        TextInputEditText email = findViewById(R.id.r_inpt_email);
+        TextInputEditText password = findViewById(R.id.r_input_password);
+
+
+        if (isEmpty(name) || isEmpty(password) || isEmpty(email)){
+            Toast.makeText(RegisterActivity.this, "CAMPOS VACIOS", Toast.LENGTH_SHORT).show();
+        } else {
+            checkIfNameEmailExist();
+        }}
+
+
+    public void checkIfNameEmailExist(){
 
         TextInputEditText name = findViewById(R.id.r_inpt_nombre);
         TextInputEditText email = findViewById(R.id.r_inpt_email);
         TextInputEditText password = findViewById(R.id.r_input_password);
+
+
 
 
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -84,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 }
                 if (!flag){
-                    createNewUser(view,name.getText().toString(),email.getText().toString(),password.getText().toString());
+                    createNewUser(name.getText().toString(),email.getText().toString(),password.getText().toString());
                 } else {
 
                     Toast.makeText(RegisterActivity.this, "NOMBRE O CORREO EXISTENTE", Toast.LENGTH_LONG).show();
@@ -99,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void createNewUser(View view, String name, String email, String password){
+    public void createNewUser(String name, String email, String password){
 
 
 
